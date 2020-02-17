@@ -43,10 +43,91 @@
 }
 
 html {
-    font-size: 62.5%;
+    /*font-size: 16px;*/
 }
 
 body {
     font-family: 'Lato Regular', sans-serif;
+    /*font-size: 16px;*/
     box-sizing: border-box;
+}
+
+.main-header {
+    background-color: #2d303a;
+}
+
+.main-nav {
+
+}
+
+.logo {
+    font-family: 'Lato Bold', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 25px;
+}
+
+.main-nav__list {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav__item {
+
+}
+
+.main-nav__link {
+    font-family: 'Lato Regular', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 12px;
+}
+
+.main-nav__link--active {
+    color: #f06c64;
+}
+
+.slider {
+
+}
+
+.services {
+    background-color: #f2f2f2;
+    color: #666d89;
+}
+
+.services__title {
+    font-family: 'Lato Black', sans-serif;
+    font-size: 30px;
+}
+
+.services__text {
+    font-family: 'Lato Light', sans-serif;
+    font-size: 18px;
+}
+
+.services__list {
+
+}
+
+.services__item {
+
+}
+
+.services__icon {
+    fill: #666d89;
+    max-height: 32px;
+    max-width: 32px;
+}
+
+.services__name {
+    font-family: 'Lato Black', sans-serif;
+    font-size: 18px;
+}
+
+.services__description {
+    font-family: 'Lato Regular', sans-serif;
+    font-size: 12px;
 }
