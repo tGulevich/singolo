@@ -22,7 +22,7 @@
     url("assets/fonts/Lato-Bold.woff") format("woff"),
     url("assets/fonts/Lato-Bold.woff2") format("woff2");
     font-style: normal;
-    font-weight: 700;
+    /*font-weight: 700;*/
 }
 
 @font-face {
@@ -52,11 +52,23 @@ body {
     box-sizing: border-box;
 }
 
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
 .main-header {
+    
     background-color: #2d303a;
+    border-bottom: 6px solid #323746;
+    
 }
 
 .main-nav {
+    height: 89px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -66,23 +78,52 @@ body {
     text-transform: uppercase;
     color: #fff;
     font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    transform: scale(0.925, 1.02);
+    margin: 0 -4px;
+
+}
+
+.logo > span {
+    color: #f06c64;
 }
 
 .main-nav__list {
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .main-nav__item {
+    margin-top: 5px;
+    margin-right: -2px;
+    margin-left: 14px;
+}
 
+.main-nav__item:not(:first-child)::before {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #494e62;
+    margin-right: 14px;
+    transform: translate(1px, -3px);
 }
 
 .main-nav__link {
-    font-family: 'Lato Regular', sans-serif;
+    display: inline-block;
+    font-family: 'Lato Bold', sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
-    font-size: 12px;
+    font-size: 12.2px;
+    line-height: 1.2;
+    /*letter-spacing: 0.01px;*/
+    transform: scale(0.95, 1.1);
 }
 
 .main-nav__link--active {
@@ -91,36 +132,64 @@ body {
 
 .slider {
 
+    height: 600px;
+    background-color: #f06c64;
 }
 
 .services {
     background-color: #f2f2f2;
     color: #666d89;
+    padding-top: 60px;
 }
 
 .services__title {
     font-family: 'Lato Black', sans-serif;
     font-size: 30px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    /*letter-spacing: .00005em;*/
+
 }
 
 .services__text {
     font-family: 'Lato Light', sans-serif;
     font-size: 18px;
+    line-height: 1.66;
+    letter-spacing: .008em;
 }
 
 .services__list {
-
+    list-style: none;
 }
 
 .services__item {
-
+    
 }
 
+
+
 .services__icon {
+    position: relative;
+}
+
+.services__icon svg {
     fill: #666d89;
     max-height: 32px;
     max-width: 32px;
 }
+
+.services__icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #666d89;
+    border-radius: 50%;
+    width: 59px;
+    height: 59px; 
+}
+
+
 
 .services__name {
     font-family: 'Lato Black', sans-serif;
