@@ -78,14 +78,6 @@ body {
     padding-bottom: 67px;
 }
 
-.portfolio__title {
-
-}
-
-.portfolio__desc {
-    
-}
-
 .portfolio__filters {
     list-style: none;
     display: flex;
@@ -127,14 +119,6 @@ body {
     padding-bottom: 67px;
 }
 
-.about__title {
-
-}
-
-.about__desc {
-
-}
-
 .persons-wrap {
     display: flex;
 
@@ -151,10 +135,6 @@ body {
 
 .person:nth-child(2n) {
     margin-right: 21px;
-}
-
-.person__photo {
-
 }
 
 .person__name {
@@ -203,7 +183,6 @@ body {
 
 .person__link:hover{
     background-color: #666d89;
-    filter: ;
 }
 
 .person__link:hover img{
