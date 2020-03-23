@@ -42,6 +42,11 @@
     box-sizing: inherit;
 }
 
+html {
+    scroll-behavior: smooth;
+
+}
+
 body {
     font-family: 'Lato Regular', sans-serif;
     font-size: 16px;
@@ -72,11 +77,13 @@ body {
 }
 
 .main-header {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 100;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
+    scroll-margin-top: 95px;
 }
 
 .main-nav {
@@ -146,6 +153,14 @@ body {
     text-decoration: underline;
 }
 
+section {
+    scroll-margin-top: 95px;
+}
+
+.slider {
+    margin-top: 95px;
+}
+
 .slider--red {
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
@@ -157,9 +172,11 @@ body {
 }
 
 .slider__wrap {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 
 .slider__arrow {
@@ -206,17 +223,11 @@ body {
     width: 796px;
     height: 594px;
     margin: 0 auto;
-
-    /*
-    padding-top: 53px;
-    padding-bottom: 58px;
-    */
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     animation: 0.5s ease-in-out;
 }
-
-
 
 .phone {
     display: inline-block;
@@ -329,6 +340,7 @@ body {
     color: #666d89;
     padding: 60px 0 30px 0;
     border-bottom: 6px solid #fff;
+    
 }
 
 .services__title {
