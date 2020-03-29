@@ -18,6 +18,28 @@ MENU.addEventListener('click', (evt) => {
     
 });
 
+// Scroll
+document.addEventListener('scroll', onScroll);
+
+function onScroll () {
+    const currentPosition = window.scrollY;
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.main-nav__link');
+    const header = document.querySelector('.main-header');
+
+    sections.forEach((el) => {        
+        if (el.offsetTop - header.offsetHeight <= currentPosition && (el.offsetTop + el.offsetHeight) > currentPosition) {
+            navLinks.forEach((link) => {
+                link.classList.remove('main-nav__link--active');
+                if (el.getAttribute('id') === link.getAttribute('href').substring(1)) {
+                    link.classList.add('main-nav__link--active');
+                };
+            })
+        }
+    });
+}
+
+
 // Slider. Переключение слайдов
 let items = document.querySelectorAll('.slider__item');
 let currentItem = 0;
@@ -89,7 +111,7 @@ PHONE_BTN_HOR.addEventListener('click', () => {
 
 // Portfolio. Переключение табов
 FILTER_BLOCK.addEventListener('click', (evt) => {
-    if (evt.target.classList.contains('portfolio__filters__link')) {
+    if (evt.target.classList.contains('portfolio__filters__link') && !evt.target.classList.contains('portfolio__filters__link--active')) {
         let images = GALLERY.querySelectorAll('.portfolio__gallery__item');
         let arr = Array.from(images).splice(images.length - 4,5);
         arr.forEach((el, i) => GALLERY.insertBefore(arr[i], images[0]));
@@ -115,13 +137,13 @@ FORM.addEventListener('submit', (evt) => {
     if (subject) {
         document.querySelector('.popup__topic').innerHTML = '<span>Subject:</span> ' + subject;
     } else {
-        document.querySelector('.popup__topic').innerHTML = '<span>Without subject</span>';
+        document.querySelector('.popup__topic').innerHTML = '<span>No subject</span>';
     }
     
     if (description) {
         document.querySelector('.popup__desc').innerHTML = '<span>Description:</span> ' + description;
     } else {
-        document.querySelector('.popup__desc').innerHTML = '<span>Without description</span>';
+        document.querySelector('.popup__desc').innerHTML = '<span>No description</span>';
     }
     
     document.querySelector('.popup').classList.remove('hidden');    
@@ -129,4 +151,7 @@ FORM.addEventListener('submit', (evt) => {
 
 BTN_POPUP.addEventListener('click', () => {
     document.querySelector('.popup').classList.add('hidden');
+    FORM.reset();
 });
+
+// Обнулить форму после отправки
