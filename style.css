@@ -311,6 +311,7 @@ section {
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    height: 594px;
 }
 
 .slider__arrow {
@@ -355,12 +356,17 @@ section {
     position: relative;
     display: none;
     width: 796px;
-    height: 594px;
+    
     margin: 0 auto;
     overflow: hidden;
     justify-content: center;
     align-items: center;
     animation: 0.5s ease-in-out;
+    padding: 0 20px;
+}
+
+.slide-img2 {
+    margin-left: 55px;
 }
 
 .phone {
@@ -370,7 +376,7 @@ section {
 .phone--horiz {
     margin-top: -1px;
     margin-right: -1px;
-    margin-left: 75px;
+    
 }
 
 .phone_btn {
@@ -380,37 +386,37 @@ section {
     background-color: rgba(0, 0, 0, 0);
     border-radius: 50%;
     cursor: pointer;
+
 }
 
 .phone_btn--vert {
-    bottom: 88px;
-    left: 85px;
+    bottom: 7.5%;
+    left: 13%;
 }
 
 .phone_btn--hor {
-    top: 263px;
-    left: 322px;
+    top: 43%;
+    left: 40%;
 }
 
 .phone_screen {
     position: absolute;
-    width: 189px;
-    height: 334px;
+    width: 23%;
+    height: 68.7%;
     background-color: #000;
     opacity: 1;
 }
-
 .phone_screen--vert {
     display: none;
-    top: 121px;
-    left: 13px;
+    top:13.3%;
+    left: 4.2%;
 }
 
 .phone_screen--hor {
     display: none;
     transform: rotate(90deg);
-    top: 118px;
-    right: 161px;
+    top: 12.9%;
+    right: 22.2%;
 }
 
 .next .phone_screen--vert,
@@ -469,12 +475,47 @@ section {
     }
 }
 
+@media only screen and (max-width: 1019px) {
+    .slider__wrap {
+        height: 75vh;
+    }
+    .slide-img2 {
+        margin-left: 45px;
+    }
+    .phone_btn,
+    .phone_screen {
+        display: none;
+    }
+ }
+
 @media only screen and (max-width: 767px) {
+    
    .slider {
        margin-top: 71px;
        border-bottom: none;
    }
+   .slide-img2 {
+        margin-left: 25px;
+    }
 }
+
+@media only screen and (max-width: 670px) {
+    .slider__wrap {
+        height: 50vh;
+    }
+ }
+
+ @media only screen and (max-width: 520px) {
+    .slider__wrap {
+        height: 40vh;
+    }
+ }
+
+ @media only screen and (max-width: 420px) {
+    .slider__wrap {
+        height: 30vh;
+    }
+ }
 
 
 .services {
@@ -585,6 +626,7 @@ section {
     .services__description {
         width: 100%;
     }
+    
 }
 
 @media only screen and (max-width: 767px) {
