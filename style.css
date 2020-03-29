@@ -43,14 +43,18 @@
 }
 
 html {
-    scroll-behavior: smooth;
-
+    scroll-behavior: smooth
 }
 
 body {
     font-family: 'Lato Regular', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 .container {
@@ -60,9 +64,12 @@ body {
 
 @media only screen and (max-width: 1019px) {
     .container {
-        max-width: 940px;
         padding: 0 40px;
-        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .container {
+        padding: 0 30px;
     }
 }
 
@@ -95,11 +102,12 @@ body {
 }
 
 .main-nav {
-
+    position: relative;
     height: 89px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 
 }
 
@@ -112,6 +120,8 @@ body {
     line-height: 28px;
     font-weight: 700;
     letter-spacing: -0.45px;
+    position: relative;
+    z-index: 100;
 }
 
 .logo > span {
@@ -123,6 +133,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 100;
 }
 
 .main-nav__item {
@@ -150,7 +161,6 @@ body {
     color: #fff;
     font-size: 12.2px;
     line-height: 1.2;
-    transform: scale(0.95, 1.1);
 }
 
 .main-nav__link:hover {
@@ -159,7 +169,75 @@ body {
 
 .main-nav__link--active {
     color: #f06c64;
-    text-decoration: underline;
+}
+
+.main-nav__checkbox {
+    display: none;
+}
+
+.main-nav__button {
+    display: none;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 35px;
+    left: 20px;
+    z-index: 100;
+
+}
+
+.main-nav__icon,
+.main-nav__icon::before,
+.main-nav__icon::after {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+   
+    transition: all .5s;
+}
+
+.main-nav__icon::before,
+.main-nav__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.main-nav__icon::before {
+    top: -8px;
+}
+
+.main-nav__icon::after {
+    top: 8px;
+}
+
+.main-nav__checkbox:checked + .main-nav__button .main-nav__icon {
+    transform: rotate(90deg);
+}
+
+.main-nav__background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #2D303A;
+    opacity: 0; 
+    z-index: 98;
+    transition: all .5s;
+}
+
+.main-nav__checkbox:checked ~ .main-nav__list {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.main-nav__checkbox:checked ~ .main-nav__background {
+    opacity: 0.6; 
+    display: block;
 }
 
 @media only screen and (max-width: 767px) {
@@ -167,15 +245,41 @@ body {
         border-bottom: none;
     }
     .main-nav__list {
+        z-index: 99;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 74%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background: #2D303A;
+        transform: translateX(-101%);
+        visibility: hidden;
+        transition: transform .5s;
+    }
+    .main-nav__item:not(:first-child)::before {
         display: none;
+    }
+    .main-nav__item {
+        margin-left: 71px;
+        margin-bottom: 27px;
+    }
+    .main-nav__link {
+        font-size: 24px;
+        line-height: 29px;
     }
     .main-nav {
         height: 71px;
         justify-content: center;
+    }   
+    .main-nav__button {
+        display: block;
     }
-
-    
-    
+    .main-nav__background {
+        display: none;
+    }
 }
 
 section {
@@ -184,10 +288,9 @@ section {
 
 @media only screen and (max-width: 767px) {
     section {
-        scroll-margin-top: 71px;
+        scroll-margin-top: 70px;
     }
 }
-
 .slider {
     margin-top: 95px;
 }
@@ -372,6 +475,7 @@ section {
        border-bottom: none;
    }
 }
+
 
 .services {
     background-color: #f2f2f2;
@@ -910,7 +1014,7 @@ section {
 }
 
 .popup__box {
-    width: 500px;
+    width: 40vw;
     min-height: 200px;
     max-height: 80vh;
     background-color: #bf4c46;
@@ -972,6 +1076,12 @@ section {
 
 .hidden {
     display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .popup__box {
+        width: 70vw;
+    }
 }
 
 

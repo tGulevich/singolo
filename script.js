@@ -39,6 +39,7 @@ function onScroll () {
     });
 }
 
+
 // Slider. Переключение слайдов
 let items = document.querySelectorAll('.slider__item');
 let currentItem = 0;
